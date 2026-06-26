@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kode Promo RedDoorz Terbaru</title>
+  <meta name="description" content="Kumpulan kode promo RedDoorz terbaru untuk diskon hotel dan penginapan. Klik dan salin kode dengan mudah.">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #e74c3c, #c0392b);
+      color: #fff;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .hero p {
+      opacity: 0.9;
+      margin-top: 10px;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .card {
+      background: #fff;
+      color: #333;
+      margin: 12px 0;
+      padding: 15px;
+      border-radius: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .code {
+      font-weight: bold;
+      word-break: break-all;
+    }
+
+    button {
+      background: #e74c3c;
+      border: none;
+      color: white;
+      padding: 8px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #c0392b;
+    }
+
+    .cta {
+      margin: 20px 0;
+      text-align: center;
+    }
+
+    .cta button {
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 10px;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 12px;
+      opacity: 0.8;
+      padding: 20px;
+    }
+
+    /* Toast */
+    .toast {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #2ecc71;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 8px;
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="hero">
+  <h1>🔥 Kode Promo RedDoorz</h1>
+  <p>Dapatkan diskon hotel & penginapan lebih hemat</p>
+</div>
+
+<div class="container">
+
+  <div class="cta">
+    <button onclick="copyAll()">📋 Copy Semua Kode</button>
+  </div>
+
+  <div class="card">
+    <div class="code">RDAFFMRREDOORZ01</div>
+    <button onclick="copyText('RDAFFMRREDOORZ01')">Copy</button>
+  </div>
+
+  <div class="card">
+    <div class="code">RDAFFMRREDOORZ</div>
+    <button onclick="copyText('RDAFFMRREDOORZ')">Copy</button>
+  </div>
+
+  <div class="card">
+    <div class="code">RDAFFREDOORZPROMOHEMAT</div>
+    <button onclick="copyText('RDAFFREDOORZPROMOHEMAT')">Copy</button>
+  </div>
+
+  <div class="card">
+    <div class="code">RDAFFPROMO1TH</div>
+    <button onclick="copyText('RDAFFPROMO1TH')">Copy</button>
+  </div>
+
+  <div class="card">
+    <div class="code">RDAFFMRREDOORZ83</div>
+    <button onclick="copyText('RDAFFMRREDOORZ83')">Copy</button>
+  </div>
+
+</div>
+
+<div class="toast" id="toast">Kode berhasil disalin!</div>
+
+<footer>
+  © 2026 Promo RedDoorz - Landing Page
+</footer>
+
+<script>
+function copyText(text) {
+  navigator.clipboard.writeText(text);
+  showToast("Kode disalin: " + text);
+}
+
+function copyAll() {
+  const all = `
+RDAFFMRREDOORZ01
+RDAFFMRREDOORZ
+RDAFFREDOORZPROMOHEMAT
+RDAFFPROMO1TH
+RDAFFMRREDOORZ83
+  `;
+  navigator.clipboard.writeText(all.trim());
+  showToast("Semua kode berhasil disalin!");
+}
+
+function showToast(msg) {
+  const toast = document.getElementById("toast");
+  toast.innerText = msg;
+  toast.style.display = "block";
+  setTimeout(() => {
+    toast.style.display = "none";
+  }, 2000);
+}
+</script>
+
+</body>
+</html>
