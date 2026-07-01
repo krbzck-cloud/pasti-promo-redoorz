@@ -114,14 +114,34 @@
         alert("Silakan salin kode secara manual.");
     }
 }
-    function goToApp() 
-        if (/android/i.test(navigator.userAgent)) {
-            window.location.href = "reddoorz://";
-            setTimeout(() => { window.location.href = "https://play.google.com/store/apps/details?id=com.reddoorz.app"; }, 1500);
-        } else {
-            window.location.href = "https://www.reddoorz.com/";
-        }
+    function goToApp() {
+
+    const ua = navigator.userAgent || "";
+
+    if (ua.includes("FBAN") || ua.includes("FBAV")) {
+        window.location.href = "https://www.reddoorz.com/";
+        return;
     }
+
+    if (/Android/i.test(ua)) {
+
+        const start = Date.now();
+
+        window.location.href = "reddoorz://";
+
+        setTimeout(function () {
+            if (Date.now() - start < 2500) {
+                window.location.href =
+                "https://play.google.com/store/apps/details?id=com.reddoorz.app";
+            }
+        }, 1500);
+
+    } else {
+
+        window.location.href = "https://www.reddoorz.com/";
+
+    }
+}
     function shareWA() {
         window.open("https://wa.me/?text=" + encodeURIComponent("Cek promo RedDoorz: " + window.location.href));
     }
