@@ -88,16 +88,33 @@
 <div id="toast" class="toast">Kode berhasil disalin!</div>
 
 <script>
-    function copyCode(id) {
-        const text = document.getElementById(id).innerText;
-        navigator.clipboard.writeText(text).then(() => {
-            const toast = document.getElementById('toast');
-            toast.style.display = 'block';
-            setTimeout(() => { toast.style.display = 'none'; }, 2000);
-            document.getElementById('openAppBtn').style.display = 'block';
-        });
+    async function copyCode(id) {
+    const text = document.getElementById(id).textContent;
+
+    try {
+        if (navigator.clipboard && window.isSecureContext) {
+            await navigator.clipboard.writeText(text);
+        } else {
+            const input = document.createElement("textarea");
+            input.value = text;
+            document.body.appendChild(input);
+            input.select();
+            document.execCommand("copy");
+            document.body.removeChild(input);
+        }
+
+        document.getElementById("toast").style.display = "block";
+        setTimeout(() => {
+            document.getElementById("toast").style.display = "none";
+        }, 2000);
+
+        document.getElementById("openAppBtn").style.display = "block";
+
+    } catch (e) {
+        alert("Silakan salin kode secara manual.");
     }
-    function goToApp() {
+}
+    function goToApp() 
         if (/android/i.test(navigator.userAgent)) {
             window.location.href = "reddoorz://";
             setTimeout(() => { window.location.href = "https://play.google.com/store/apps/details?id=com.reddoorz.app"; }, 1500);
