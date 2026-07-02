@@ -25,12 +25,16 @@
 ‎        .logo span { font-weight: 300; }
 ‎        header p { font-size: 13px; opacity: 0.9; margin-top: 5px; }
 ‎
-‎        .container { max-width: 500px; margin: 0 auto; padding: 0 15px; }
+‎        .container {
+    max-width: 500px;
+    margin: -20px auto 0;
+    padding: 0 15px;
+}
 ‎
-‎        .hero-image { width: 100%; margin-top: -20px; margin-bottom: 20px; }
+‎        .hero-image { width: 100%; margin-top: -10px; margin-bottom: 20px; }
 ‎        .hero-image img { width: 100%; border-radius: 15px; box-shadow: 0 8px 20px rgba(0,0,0,0.15); border: 4px solid white; }
 ‎
-‎        .info-box { background: white; padding: 15px; border-radius: 12px; margin-bottom: 20px; border-left: 5px solid #e12024; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+‎        .info-box { padding: 18px; border-radius: 12px; margin-bottom: 20px; border-left: 5px solid #e12024; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
 ‎        .info-box h3 { font-size: 16px; color: #e12024; margin-bottom: 5px; }
 ‎        .info-box ul { list-style: none; font-size: 13px; }
 ‎
@@ -44,27 +48,36 @@
 ‎        .row { display: flex; gap: 10px; }
 ‎        .row div { flex: 1; }
 ‎
-‎        button { 
-‎            width: 100%; padding: 16px; background: #25d366; color: white; border: none; 
-‎            border-radius: 10px; font-size: 16px; font-weight: 700; cursor: pointer; 
-‎            margin-top: 25px; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3); transition: 0.3s;
+‎        button{
+    width:100%;
+    background:#25D366;
+    color:#fff;
+    border:none;
+    border-radius:12px;
+    padding:18px;
+    font-size:17px;
+    font-weight:700;
+    box-shadow:0 8px 20px rgba(37,211,102,.35);
+}
 ‎        }
 ‎        button:hover { background: #1eb954; transform: translateY(-2px); }
 ‎
-‎        footer { text-align: center; padding: 30px; font-size: 11px; color: #888; }
+‎        footer{
+    margin-top:40px;
+}
 ‎    </style>
 ‎</head>
 ‎<body>
 ‎
 ‎    <header>
 ‎        <div class="logo">RedDoorz <span>Booking</span></div>
-‎        <p>Solusi Cepat Reservasi Kamar Hotel 24 Jam</p>7
+‎        <p>Solusi Cepat Reservasi Kamar Hotel 24 Jam</p>
 ‎    </header>
 ‎
 ‎    <main class="container">
 ‎        <!-- Gambar Hero/Promo -->
 ‎        <div class="hero-image">
-‎            <img src="../preview-promo.jpg" alt="Promo Hotel RedDoorz">
+‎            <img src="promo.jpg" alt="Promo Hotel RedDoorz">
 ‎        </div>
 ‎
 ‎        <div class="info-box">
