@@ -60,9 +60,9 @@
                 <button onclick="copyToClipboard('RDAFFOMONOMON', this)" class="w-full bg-gradient-to-b from-white to-gray-100 hover:to-gray-200 text-gray-800 font-bold py-3 px-4 rounded-xl border border-gray-200 shadow-sm flex items-center justify-center gap-2 active:scale-[0.99] transition-all mb-3">
                     📋 <span class="button-text">COPY KODE</span>
                 </button>
-                <a href="reddoorz://open" class="w-full bg-[#10a34a] hover:bg-[#0e8f40] text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 shadow-md transition-all active:scale-[0.98] uppercase tracking-wider text-xs">
+                <button onclick="openRedDoorzApp()" class="w-full bg-[#10a34a] hover:bg-[#0e8f40] text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 shadow-md transition-all active:scale-[0.98] uppercase tracking-wider text-xs">
                     🚀 BUKA APLIKASI REDDOORZ
-                </a>
+                </button>
             </div>
 
             <!-- KODE 2 -->
@@ -74,9 +74,9 @@
                 <button onclick="copyToClipboard('RDAFFYOGYAKARTAISTIMEWA', this)" class="w-full bg-gradient-to-b from-white to-gray-100 hover:to-gray-200 text-gray-800 font-bold py-3 px-4 rounded-xl border border-gray-200 shadow-sm flex items-center justify-center gap-2 active:scale-[0.99] transition-all mb-3">
                     📋 <span class="button-text">COPY KODE</span>
                 </button>
-                <a href="reddoorz://open" class="w-full bg-[#10a34a] hover:bg-[#0e8f40] text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 shadow-md transition-all active:scale-[0.98] uppercase tracking-wider text-xs">
+                <button onclick="openRedDoorzApp()" class="w-full bg-[#10a34a] hover:bg-[#0e8f40] text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 shadow-md transition-all active:scale-[0.98] uppercase tracking-wider text-xs">
                     🚀 BUKA APLIKASI REDDOORZ
-                </a>
+                </button>
             </div>
 
             <!-- KODE 3 -->
@@ -88,9 +88,9 @@
                 <button onclick="copyToClipboard('RDAFFAMERICANO', this)" class="w-full bg-gradient-to-b from-white to-gray-100 hover:to-gray-200 text-gray-800 font-bold py-3 px-4 rounded-xl border border-gray-200 shadow-sm flex items-center justify-center gap-2 active:scale-[0.99] transition-all mb-3">
                     📋 <span class="button-text">COPY KODE</span>
                 </button>
-                <a href="reddoorz://open" class="w-full bg-[#10a34a] hover:bg-[#0e8f40] text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 shadow-md transition-all active:scale-[0.98] uppercase tracking-wider text-xs">
+                <button onclick="openRedDoorzApp()" class="w-full bg-[#10a34a] hover:bg-[#0e8f40] text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 shadow-md transition-all active:scale-[0.98] uppercase tracking-wider text-xs">
                     🚀 BUKA APLIKASI REDDOORZ
-                </a>
+                </button>
             </div>
 
             <!-- Social Media Buttons -->
@@ -121,8 +121,28 @@
 
     </div>
 
-    <!-- Script Salin Kode Otomatis & Redirect ke Aplikasi -->
+    <!-- Script Utama Manajemen Aksi Pintar -->
     <script>
+        // Fungsi Pintar untuk Membuka Aplikasi dengan Sistem Fallback Aman
+        function openRedDoorzApp() {
+            const fallbackUrl = "https://play.google.com/store/apps/details?id=com.reddoorz.app";
+            const appScheme = "reddoorz://open";
+            
+            // Catat waktu awal untuk mendeteksi apakah aplikasi berhasil terbuka
+            const start = Date.now();
+            
+            // Coba buka aplikasi lewat skema custom
+            window.location.href = appScheme;
+            
+            // Jika dalam 1.5 detik peramban gagal membuka aplikasi (tidak berpindah halaman), alihkan ke Store Resmi
+            setTimeout(() => {
+                if (Date.now() - start < 2000) {
+                    window.location.href = fallbackUrl;
+                }
+            }, 1500);
+        }
+
+        // Fungsi Salin Kode ke Clipboard
         function copyToClipboard(text, button) {
             navigator.clipboard.writeText(text).then(() => {
                 const textSpan = button.querySelector('.button-text');
@@ -131,13 +151,11 @@
                 textSpan.innerText = "TERSALIN!";
                 button.classList.add('bg-green-50', 'border-green-300');
                 
-                // Jeda 1 detik setelah disalin, otomatis membuka aplikasi RedDoorz
+                // Jeda 1 detik agar animasi text selesai, lalu jalankan fungsi redirect pintar
                 setTimeout(() => {
                     textSpan.innerText = originalText;
                     button.classList.remove('bg-green-50', 'border-green-300');
-                    
-                    // Membuka Deep Link Aplikasi RedDoorz
-                    window.location.href = "reddoorz://open";
+                    openRedDoorzApp();
                 }, 1000);
             }).catch(err => {
                 console.error('Gagal menyalin kode: ', err);
