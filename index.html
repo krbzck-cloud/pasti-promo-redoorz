@@ -57,9 +57,12 @@
                 <div class="w-full border-2 border-dashed border-gray-200 rounded-xl py-3 text-center mb-4 bg-gray-50/50">
                     <span class="text-[#e21c24] font-bold text-lg tracking-wider block px-2 break-all">RDAFFOMONOMON</span>
                 </div>
-                <button onclick="copyToClipboard('RDAFFOMONOMON', this)" class="w-full bg-gradient-to-b from-white to-gray-100 hover:to-gray-200 text-gray-800 font-bold py-3 px-4 rounded-xl border border-gray-200 shadow-sm flex items-center justify-center gap-2 active:scale-[0.99] transition-all">
+                <button onclick="copyToClipboard('RDAFFOMONOMON', this)" class="w-full bg-gradient-to-b from-white to-gray-100 hover:to-gray-200 text-gray-800 font-bold py-3 px-4 rounded-xl border border-gray-200 shadow-sm flex items-center justify-center gap-2 active:scale-[0.99] transition-all mb-3">
                     📋 <span class="button-text">COPY KODE</span>
                 </button>
+                <a href="reddoorz://open" class="w-full bg-[#10a34a] hover:bg-[#0e8f40] text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 shadow-md transition-all active:scale-[0.98] uppercase tracking-wider text-xs">
+                    🚀 BUKA APLIKASI REDDOORZ
+                </a>
             </div>
 
             <!-- KODE 2 -->
@@ -68,9 +71,12 @@
                 <div class="w-full border-2 border-dashed border-gray-200 rounded-xl py-3 text-center mb-4 bg-gray-50/50">
                     <span class="text-[#e21c24] font-bold text-lg tracking-wider block px-2 break-all">RDAFFYOGYAKARTAISTIMEWA</span>
                 </div>
-                <button onclick="copyToClipboard('RDAFFYOGYAKARTAISTIMEWA', this)" class="w-full bg-gradient-to-b from-white to-gray-100 hover:to-gray-200 text-gray-800 font-bold py-3 px-4 rounded-xl border border-gray-200 shadow-sm flex items-center justify-center gap-2 active:scale-[0.99] transition-all">
+                <button onclick="copyToClipboard('RDAFFYOGYAKARTAISTIMEWA', this)" class="w-full bg-gradient-to-b from-white to-gray-100 hover:to-gray-200 text-gray-800 font-bold py-3 px-4 rounded-xl border border-gray-200 shadow-sm flex items-center justify-center gap-2 active:scale-[0.99] transition-all mb-3">
                     📋 <span class="button-text">COPY KODE</span>
                 </button>
+                <a href="reddoorz://open" class="w-full bg-[#10a34a] hover:bg-[#0e8f40] text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 shadow-md transition-all active:scale-[0.98] uppercase tracking-wider text-xs">
+                    🚀 BUKA APLIKASI REDDOORZ
+                </a>
             </div>
 
             <!-- KODE 3 -->
@@ -79,20 +85,16 @@
                 <div class="w-full border-2 border-dashed border-gray-200 rounded-xl py-3 text-center mb-4 bg-gray-50/50">
                     <span class="text-[#e21c24] font-bold text-lg tracking-wider block px-2 break-all">RDAFFAMERICANO</span>
                 </div>
-                <button onclick="copyToClipboard('RDAFFAMERICANO', this)" class="w-full bg-gradient-to-b from-white to-gray-100 hover:to-gray-200 text-gray-800 font-bold py-3 px-4 rounded-xl border border-gray-200 shadow-sm flex items-center justify-center gap-2 active:scale-[0.99] transition-all">
+                <button onclick="copyToClipboard('RDAFFAMERICANO', this)" class="w-full bg-gradient-to-b from-white to-gray-100 hover:to-gray-200 text-gray-800 font-bold py-3 px-4 rounded-xl border border-gray-200 shadow-sm flex items-center justify-center gap-2 active:scale-[0.99] transition-all mb-3">
                     📋 <span class="button-text">COPY KODE</span>
                 </button>
-            </div>
-
-            <!-- Tombol Buka Aplikasi RedDoorz -->
-            <div class="pt-2">
-                <a href="reddoorz://open" class="w-full bg-[#10a34a] hover:bg-[#0e8f40] text-white font-bold py-3.5 px-4 rounded-xl flex items-center justify-center gap-2 shadow-md transition-all active:scale-[0.98] uppercase tracking-wider text-sm">
+                <a href="reddoorz://open" class="w-full bg-[#10a34a] hover:bg-[#0e8f40] text-white font-bold py-3 px-4 rounded-xl flex items-center justify-center gap-2 shadow-md transition-all active:scale-[0.98] uppercase tracking-wider text-xs">
                     🚀 BUKA APLIKASI REDDOORZ
                 </a>
             </div>
 
             <!-- Social Media Buttons -->
-            <div class="grid grid-cols-2 gap-3">
+            <div class="grid grid-cols-2 gap-3 pt-2">
                 <a href="https://wa.me/#" target="_blank" class="bg-[#25D366] hover:bg-[#20ba5a] text-white font-semibold py-3 px-4 rounded-xl flex items-center justify-center gap-2 shadow-md transition-all active:scale-95 text-sm">
                     📲 WhatsApp
                 </a>
@@ -129,7 +131,7 @@
                 textSpan.innerText = "TERSALIN!";
                 button.classList.add('bg-green-50', 'border-green-300');
                 
-                // Jeda 1 detik sebelum membawa pengguna langsung ke aplikasi RedDoorz
+                // Jeda 1 detik setelah disalin, otomatis membuka aplikasi RedDoorz
                 setTimeout(() => {
                     textSpan.innerText = originalText;
                     button.classList.remove('bg-green-50', 'border-green-300');
